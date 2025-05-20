@@ -19,28 +19,34 @@ public class Game {
 	private Long id;
 	private String title;
 	
-	@Column(name = "gamer_year")
+	@Column(name = "game_year")
 	private Integer year;
 	private String genre;
-	private String plataform;
+	private String platforms;
+	private Double score;
 	private String imgUrl;
-	private String shorDescription;
-	private String longDescripion;
+	
+	@Column(columnDefinition = "TEXT")
+	private String shortDescription;
+	
+	@Column(columnDefinition = "TEXT")
+	private String longDescription;
 	
 	public Game() {
 		
 	}
 
-	public Game(Long id, String title, Integer year, String genre, String plataform, String imgUrl,
-			String shorDescription, String longDescripion) {
+	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
+			String shortDescription, String longDescripion) {
 		this.id = id;
 		this.title = title;
 		this.year = year;
 		this.genre = genre;
-		this.plataform = plataform;
+		this.platforms = platforms;
+		this.score = score;
 		this.imgUrl = imgUrl;
-		this.shorDescription = shorDescription;
-		this.longDescripion = longDescripion;
+		this.shortDescription = shortDescription;
+		this.longDescription = longDescription;
 	}
 
 	public Long getId() {
@@ -75,12 +81,21 @@ public class Game {
 		this.genre = genre;
 	}
 
-	public String getPlataform() {
-		return plataform;
+	public String getPlataforms() {
+		return platforms;
 	}
 
-	public void setPlataform(String plataform) {
-		this.plataform = plataform;
+	public void setPlatforms(String platforms) {
+		this.platforms = platforms;
+	}
+	
+
+	public Double getScore() {
+		return score;
+	}
+
+	public void setScore(Double score) {
+		this.score = score;
 	}
 
 	public String getImgUrl() {
@@ -91,20 +106,20 @@ public class Game {
 		this.imgUrl = imgUrl;
 	}
 
-	public String getShorDescription() {
-		return shorDescription;
+	public String getShortDescription() {
+		return shortDescription;
 	}
 
-	public void setShorDescription(String shorDescription) {
-		this.shorDescription = shorDescription;
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
 	}
 
-	public String getLongDescripion() {
-		return longDescripion;
+	public String getLongDescription() {
+		return longDescription;
 	}
 
-	public void setLongDescripion(String longDescripion) {
-		this.longDescripion = longDescripion;
+	public void setLongDescription(String longDescription) {
+		this.longDescription = longDescription;
 	}
 
 	@Override
