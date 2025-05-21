@@ -12,9 +12,11 @@ public class GameMinDTO {
 	private Integer year;	
 	private String imgUrl;	
 	private String shortDescription;
+	
 	public GameMinDTO() {
 		
 	}
+
 	public GameMinDTO(Game entity) {//o construtor recebe a entidade		
 		id = entity.getId();//como não tem anbiguidade não precisa do this
 		title = entity.getTitle();
